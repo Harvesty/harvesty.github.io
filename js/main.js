@@ -1,21 +1,12 @@
-var app = new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!',
-        apiUrl: 'data/base.json'
-    },
-    ready: function () {
-        this.getCustomers()
-    },
-    methods: {
-        getCustomers: function () {
-            this.$http.get(this.apiUrl)
-                .then((response) => {
-                    this.$set('message', response.data)
-                })
-                .catch(function (response) {
-                    console.log(response)
-                })
-        }
-    }
-})
+//$("#app").in
+$.getJSON("data/base.json", function (data) {
+    var items = [];
+    $.each(data, function (key, val) {
+        items.push("<li id='" + key + "'>" + val + "</li>");
+    });
+
+    $("<ul/>", {
+        "class": "my-new-list",
+        html: items.join("")
+    }).appendTo("body");
+});
