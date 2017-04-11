@@ -15,11 +15,11 @@ body {
 	background-color: #FFF;
 }
 header {
-  width: 100%;
+  width: 90%;
   top: 0;
   background-color: #fff;
   height: 40px;
-  padding: 10px 60px;
+  padding: 10px 20px;
   position: relative;
   z-index: 2;
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
