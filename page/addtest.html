@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>添加试题</title>
+        <link rel="stylesheet" href="../css/page.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="../js/FileSaver.min.js"></script>
+        <script src="../js/savetest.js"></script>
+
+    </head>
+    <body>
+        <header>
+            添加试题
+        </header>
+        <main>
+            <section>
+                <h2>保存试题</h2>
+                <textarea class="input" id="txtCode" placeholder="此处放置试题代码..."/>
+                <form id="frmQuestions">
+                    <label>Filename: <input type="text" class="filename" id="txtFileName" placeholder="base"/>.json</label>
+                    <input type="submit" value="Save"/>
+                </form>
+            </section>
+
+        </main>
+        <script src="js/main.js"></script>
+    </body>
+</html>
