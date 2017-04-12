@@ -10,7 +10,7 @@
 		txtTest = $("txtTest"),
 		frmQuestions = $("frmQuestions"),
 		txtFileName = $("txtFileName"),
-		pmGetData = getJSON("data/base.json");
+		pmGetData = getJSON("../data/base.json");
 
 	function getJSON(url) {
 		return new Promise(function (resolve, reject) {
