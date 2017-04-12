@@ -45,21 +45,21 @@
 		pmGetData.then(function (tests) {
 
 			let test = {
-				desc: 'test',
-				code: 'code'
+				desc: JSON.stringify('test'),
+				code: JSON.stringify('code')
 			};
-			tests.push(JSON.stringify(test));
+			tests.push(test);
+			saveAs(
+				new Blob(
+					[tests], {
+						type: "application/json;charset=" + document.characterSet
+					}
+				), (txtFileName.value || txtFileName.placeholder) + ".json"
+			);
 
 		}, function (Error) {
 			console.log(Error);
 		});
-		saveAs(
-			new Blob(
-				[txtCode.value || txtCode.placeholder], {
-					type: "application/json;charset=" + document.characterSet
-				}
-			), (txtFileName.value || txtFileName.placeholder) + ".json"
-		);
 
 	}, false);
 
