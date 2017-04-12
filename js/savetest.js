@@ -7,7 +7,7 @@
 		},
 		session = view.sessionStorage,
 		txtCode = $("txtCode"),
-		txtCode = $("txtCode"),
+		txtTest = $("txtTest"),
 		frmQuestions = $("frmQuestions"),
 		txtFileName = $("txtFileName")
 
