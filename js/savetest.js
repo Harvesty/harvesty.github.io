@@ -44,7 +44,10 @@
 		event.preventDefault();
 		pmGetData.then(function (tests) {
 
-			test={desc:'test',code:'code'};
+			let test = {
+				desc: 'test',
+				code: 'code'
+			};
 			tests.push(JSON.stringify(test));
 
 		}, function (Error) {
