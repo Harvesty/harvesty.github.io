@@ -9,7 +9,7 @@
 		txtCode = $("txtCode"),
 		txtCode = $("txtCode"),
 		frmQuestions = $("frmQuestions"),
-		txtFileName = $("txtFileName"),
+		txtFileName = $("txtFileName")
 
 		;
 
