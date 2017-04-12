@@ -8,7 +8,7 @@
 		session = view.sessionStorage,
 		txtCode = $("txtCode"),
 		frmQuestions = $("frmQuestions"),
-		txtFileName = $("txtFileName")
+		txtFileName = $("txtFileName");
 
 	if (session.code) {
 		txtCode.value = session.txtCode;
