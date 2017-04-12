@@ -5,6 +5,7 @@ $.getJSON("data/base.json", function (data) {
         items.push("<li id='" + key + "'>" + val + "</li>");
     });
 
+
     $("<ul/>", {
         "class": "my-new-list",
         html: items.join("")
