@@ -77,7 +77,7 @@
 			}
 		};
 		mTests.push(test);
-
+		preview(test);
 	}, false);
 
 	// 下载试题
