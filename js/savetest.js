@@ -51,7 +51,7 @@
 			tests.push(test);
 			saveAs(
 				new Blob(
-					JSON.stringify(tests), {
+					[JSON.stringify(tests)], {
 						type: "application/json;charset=" + document.characterSet
 					}
 				), (txtFileName.value || txtFileName.placeholder) + ".json"
