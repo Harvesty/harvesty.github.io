@@ -9,6 +9,8 @@
 		uTests = null, // Unmodified
 		mTests = null, // Modified
 		btnAdd = $("btnAdd"),
+		pTest = $("pTest"),
+		cdCode = $("cdCode"),
 		txtCode = $("txtCode"),
 		txtTest = $("txtTest"),
 		frmQuestions = $("frmQuestions"),
@@ -34,6 +36,12 @@
 			};
 			request.send();
 		});
+	}
+
+	// 预览试题
+	function preview(test) {
+		pTest.textContent = test.Q.desc;
+		cdCode.textContent = test.Q.code;
 	}
 
 	// 恢复上次页面关闭前的状态
