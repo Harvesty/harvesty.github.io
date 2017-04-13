@@ -45,8 +45,14 @@
 		pmGetData.then(function (tests) {
 
 			let test = {
-				desc: JSON.stringify('test'),
-				code: JSON.stringify('code')
+				Q: {
+					desc: JSON.stringify(txtTest.value),
+					code: JSON.stringify(txtCode.value)
+				},
+				A: {
+					desc: "",
+					code: ""
+				}
 			};
 			tests.push(test);
 			saveAs(
