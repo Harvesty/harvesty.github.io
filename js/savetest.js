@@ -64,6 +64,7 @@
 		if (Array.isArray(tests)) {
 			uTests = tests;
 			mTests = uTests;
+			preview(mTests[0])
 		}
 	}, function (Error) {
 		console.log(Error);
