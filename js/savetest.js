@@ -42,6 +42,7 @@
 	function preview(test) {
 		pTest.textContent = test.Q.desc;
 		cdCode.textContent = test.Q.code;
+		Prism.highlightElement(cdCode);
 	}
 
 	// 初始化编辑器
