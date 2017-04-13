@@ -46,8 +46,8 @@
 
 			let test = {
 				Q: {
-					desc: JSON.stringify(txtTest.value),
-					code: JSON.stringify(txtCode.value)
+					desc: txtTest.value,
+					code: txtCode.value
 				},
 				A: {
 					desc: "",
