@@ -44,8 +44,8 @@
 		event.preventDefault();
 		pmGetData.then(function (tests) {
 
-			txtTest.value = JSON.parse(tests[0].Q.desc);
-			txtCode.value = JSON.parse(tests[0].Q.code);
+			txtTest.value = tests[0].Q.desc;
+			txtCode.value = tests[0].Q.code;
 
 			let test = {
 				Q: {
