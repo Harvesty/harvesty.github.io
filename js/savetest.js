@@ -89,22 +89,14 @@
 	// 下载试题
 	frmQuestions.addEventListener("submit", function (event) {
 		event.preventDefault();
-		pmGetData.then(function (tests) {
 
-			txtTest.value = tests[0].Q.desc;
-			txtCode.value = tests[0].Q.code;
-
-			saveAs(
-				new Blob(
-					[JSON.stringify(mTests)], {
-						type: "application/json;charset=" + document.characterSet
-					}
-				), (txtFileName.value || txtFileName.placeholder) + ".json"
-			);
-
-		}, function (Error) {
-			console.log(Error);
-		});
+		saveAs(
+			new Blob(
+				[JSON.stringify(mTests)], {
+					type: "application/json;charset=" + document.characterSet
+				}
+			), (txtFileName.value || txtFileName.placeholder) + ".json"
+		);
 
 	}, false);
 
