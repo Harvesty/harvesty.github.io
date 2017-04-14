@@ -112,7 +112,7 @@
 
 		repository.writeFile(
 		   'master', // the name of the branch
-		   'file', // the path for the file
+		   '../data/base.json', // the path for the file
 		   JSON.stringify(mTests), // the contents of the file
 		   'save the tests', // the commit message
 		   function(err) {}
