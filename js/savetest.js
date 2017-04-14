@@ -6,15 +6,19 @@
 			return document.getElementById(id);
 		},
 		session = view.sessionStorage,
+		github = null,
+		repository = null,
 		uTests = null, // Unmodified
 		mTests = null, // Modified
+		txtUser = $("txtUser"),
+		txtPwd = $("txtPwd"),
+		btnGithub = $("btnGithub"),
+		txtCode = $("txtCode"),
+		txtTest = $("txtTest"),
 		btnAdd = $("btnAdd"),
 		pTest = $("pTest"),
 		cdCode = $("cdCode"),
-		txtCode = $("txtCode"),
-		txtTest = $("txtTest"),
-		frmQuestions = $("frmQuestions"),
-		txtFileName = $("txtFileName");
+		btnUpload = $("btnUpload");
 
 	// 函数：获取JSON数据
 	function getJSON(url) {
@@ -70,6 +74,20 @@
 		console.log(Error);
 	});
 
+	// 初始化Github组件
+	btnGithub.addEventListener("click", function (event) {
+		event.preventDefault();
+
+
+		github = new GitHub({
+			username: txtUser.value,
+			password: txtPwd.value, 
+			auth: 'basic'
+		});
+		repository = github.getRepo(txtUser.value, 'Test');
+
+	}, false);
+
 	// 添加试题
 	btnAdd.addEventListener("click", function (event) {
 		event.preventDefault();
@@ -88,16 +106,16 @@
 		preview(test);
 	}, false);
 
-	// 下载试题
-	frmQuestions.addEventListener("submit", function (event) {
+	// 保存试题
+	btnUpload.addEventListener("click", function (event) {
 		event.preventDefault();
 
-		saveAs(
-			new Blob(
-				[JSON.stringify(mTests)], {
-					type: "application/json;charset=" + document.characterSet
-				}
-			), (txtFileName.value || txtFileName.placeholder) + ".json"
+		repository.writeFile(
+		   'master', // the name of the branch
+		   'file', // the path for the file
+		   JSON.stringify(mTests), // the contents of the file
+		   'save the tests', // the commit message
+		   function(err) {}
 		);
 
 	}, false);
