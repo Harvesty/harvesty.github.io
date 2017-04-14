@@ -78,13 +78,12 @@
 	btnGithub.addEventListener("click", function (event) {
 		event.preventDefault();
 
-
 		github = new GitHub({
 			username: txtUser.value,
 			password: txtPwd.value, 
 			auth: 'basic'
 		});
-		repository = github.getRepo(txtUser.value, 'Test');
+		repository = github.getRepo(txtUser.value, 'harvesty.github.io');
 
 	}, false);
 
