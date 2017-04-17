@@ -60,6 +60,16 @@ section {
 	height: 300px;
 }
 
-.filename {
-	text-align: right;
+.modal {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	height: 100%;
+	width: 100%/* needed for Firefox */
+}
+
+.modal-inner {
+	height: 10rem;
 }
