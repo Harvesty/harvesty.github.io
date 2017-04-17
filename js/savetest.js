@@ -18,7 +18,11 @@
 		btnAdd = $("btnAdd"),
 		pTest = $("pTest"),
 		cdCode = $("cdCode"),
-		btnUpload = $("btnUpload");
+		btnUpload = $("btnUpload"),
+		divModal = $("divModal"),
+		btnModalClose = $("btnModalClose")
+
+		;
 
 	// 函数：获取JSON数据
 	function getJSON(url) {
@@ -68,7 +72,7 @@
 		if (Array.isArray(tests)) {
 			uTests = tests;
 			mTests = uTests;
-			preview(mTests[0])
+			preview(mTests[0]);
 		}
 	}, function (Error) {
 		console.log(Error);
@@ -80,7 +84,7 @@
 
 		github = new GitHub({
 			username: txtUser.value,
-			password: txtPwd.value, 
+			password: txtPwd.value,
 			auth: 'basic'
 		});
 		repository = github.getRepo(txtUser.value, 'harvesty.github.io');
@@ -109,12 +113,15 @@
 	btnUpload.addEventListener("click", function (event) {
 		event.preventDefault();
 
+		if (!github) {
+
+		}
 		repository.writeFile(
 			'master', // the name of the branch
 			'data/base.json', // the path for the file
 			JSON.stringify(mTests), // the contents of the file
 			'save the tests', // the commit message
-			function(err) {}
+			function (err) {}
 		);
 
 	}, false);
