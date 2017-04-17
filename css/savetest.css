@@ -82,7 +82,9 @@ section {
 	border-radius: 6px;
 	padding: 10px;
 }
-
+.modal-inner header {
+	padding: 5px;
+}
 .Modal-closeButton {
 	position: absolute;
 	top: 0px;
