@@ -94,7 +94,7 @@
 			'cancelable': true
 		});
 		btnModalClose.dispatchEvent(evtClick);
-		
+
 	}, false);
 
 	// 添加试题
@@ -127,7 +127,11 @@
 			'data/base.json', // the path for the file
 			JSON.stringify(mTests), // the contents of the file
 			'save the tests', // the commit message
-			function (err) {}
+			function (error, result, request) {
+				if (error) {
+					alert("Save failed");
+				}
+			}
 		);
 
 	}, false);
