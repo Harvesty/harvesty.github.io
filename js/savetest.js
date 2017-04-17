@@ -19,6 +19,8 @@
 		pTest = $("pTest"),
 		cdCode = $("cdCode"),
 		btnUpload = $("btnUpload"),
+		secEdit = $("secEdit"),
+		secPreview = $("secPreview"),
 		divModal = $("divModal"),
 		btnModalClose = $("btnModalClose")
 
