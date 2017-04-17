@@ -22,7 +22,7 @@
 		divModal = $("divModal"),
 		btnModalClose = $("btnModalClose")
 
-		;
+	;
 
 	// 函数：获取JSON数据
 	function getJSON(url) {
@@ -80,7 +80,6 @@
 
 	// 初始化Github组件
 	btnGithub.addEventListener("click", function (event) {
-		event.preventDefault();
 
 		github = new GitHub({
 			username: txtUser.value,
@@ -89,11 +88,17 @@
 		});
 		repository = github.getRepo(txtUser.value, 'harvesty.github.io');
 
+		let evtClick = new MouseEvent('click', {
+			'view': window,
+			'bubbles': true,
+			'cancelable': true
+		});
+		btnModalClose.dispatchEvent(evtClick);
+		
 	}, false);
 
 	// 添加试题
 	btnAdd.addEventListener("click", function (event) {
-		event.preventDefault();
 
 		let test = {
 			Q: {
@@ -111,12 +116,12 @@
 
 	// 保存试题
 	btnUpload.addEventListener("click", function (event) {
-		event.preventDefault();
 
 		if (!github) {
 			divModal.classList.remove('hidden');
 			return false;
 		}
+
 		repository.writeFile(
 			'master', // the name of the branch
 			'data/base.json', // the path for the file
@@ -125,6 +130,11 @@
 			function (err) {}
 		);
 
+	}, false);
+
+	// 关闭Modal
+	btnModalClose.addEventListener("click", function (event) {
+		divModal.classList.add('hidden');
 	}, false);
 
 	// 保存页面关闭前状态。
