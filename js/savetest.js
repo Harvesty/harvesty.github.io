@@ -21,6 +21,11 @@
 		cdCode = $("cdCode"),
 		btnMode = $("btnMode"),
 		btnAdd = $("btnAdd"),
+		btnSave = $("btnSave"),
+		btnPre = $("btnPre"),
+		btnNext = $("btnNext"),
+		btnFirst = $("btnFirst"),
+		btnLast = $("btnLast"),
 		btnUpload = $("btnUpload"),
 		secEdit = $("secEdit"),
 		secPreview = $("secPreview"),
@@ -122,6 +127,23 @@
 
 	// 添加试题
 	btnAdd.addEventListener("click", function (event) {
+
+		currentTest = {
+			Q: {
+				desc: "",
+				code: ""
+			},
+			A: {
+				desc: "",
+				code: ""
+			}
+		};
+		initEditor(currentTest);
+		
+	}, false);
+
+	// 保存试题
+	btnSave.addEventListener("click", function (event) {
 
 		currentTest = {
 			Q: {
