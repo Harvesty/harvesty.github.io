@@ -77,6 +77,8 @@ section {
 	width: 15rem;
 	height: 10rem;
 	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 6px;
 }
 
 .Modal-closeButton {
