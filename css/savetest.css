@@ -41,10 +41,6 @@ form {
 	margin-top: 5px;
 }
 
-.hidden {
-	display: none;
-}
-
 body>section {
 	margin-top: 40px;
 }
@@ -100,4 +96,8 @@ body>section {
 	background-color: white;
 	border: 0;
 	cursor: pointer;
+}
+
+.hidden {
+	display: none;
 }
