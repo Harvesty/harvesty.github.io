@@ -16,6 +16,10 @@
     </header>
     <main>
         <section>
+            <input id="btnAdd" type="button" value="Add a Test"/>
+            <input id="btnUpload" type="button" value="Upload"/>
+        </section>
+        <section>
             <h2>保存试题</h2>
             <textarea class="input test" id="txtTest" placeholder="此处填写试题描述..."></textarea >
             <textarea class="input code" id="txtCode" placeholder="此处填写试题代码..."></textarea >
@@ -24,15 +28,6 @@
             <h2>试题预览</h2>
             <p id="pTest"></p>
             <pre><code id="cdCode" class="language-javascript"></code></pre>
-        </section>
-        <section>
-            <input id="btnAdd" type="button" value="Add a Test"/>
-            <input id="btnUpload" type="button" value="Upload"/>
-
-            <form id="btnUpload">
-                <label>Filename: <input type="text" class="filename" id="txtFileName" placeholder="base"/>.json</label>
-                <input type="submit" value="Save"/>
-            </form>
         </section>
 
     </main>
