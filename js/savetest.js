@@ -56,15 +56,18 @@
 		pTest.textContent = test.Q.desc;
 		cdCode.textContent = test.Q.code;
 		Prism.highlightElement(cdCode);
+		secPreview.classList.remove('hidden');
+		secEdit.classList.add('hidden');
 		btnMode.value = '编辑';
 		blnEdit = true;
-
 	}
 
 	// 初始化编辑器
 	function initEditor(test) {
 		txtTest.value = test.Q.desc;
 		txtCode.value = test.Q.code;
+		secEdit.classList.remove('hidden');
+		secPreview.classList.add('hidden');
 		btnMode.value = '预览';
 		blnEdit = false;
 	}
@@ -80,7 +83,7 @@
 		}
 	};
 	initEditor(currentTest);
-	
+
 	// 恢复上次页面关闭前的状态
 	/*if (session.code) {
 		txtCode.value = session.txtCode;
