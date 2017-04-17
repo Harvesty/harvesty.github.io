@@ -89,3 +89,32 @@ section {
 	padding: 12px;
 	cursor: pointer;
 }
+.Modal-closeButton {
+  right: 1em;
+}
+
+.Modal-closeIcon {
+  max-width: 12px;
+  fill: currentColor;
+}
+
+.Modal-buttons {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.Modal-buttons .Button {
+ height: 32px;
+ line-height: 30px;
+ width: 72px;
+ padding: 0;
+}
+
+.Modal-buttons .Button + .Button {
+ margin-left: 16px;
+}
