@@ -74,6 +74,7 @@ section {
 }
 
 .modal-inner {
+	position: relative;
 	width: 15rem;
 	height: 10rem;
 	background-color: white;
