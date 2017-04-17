@@ -72,18 +72,6 @@
 		blnEdit = false;
 	}
 
-	currentTest = {
-		Q: {
-			desc: "",
-			code: ""
-		},
-		A: {
-			desc: "",
-			code: ""
-		}
-	};
-	initEditor(currentTest);
-
 	// 恢复上次页面关闭前的状态
 	/*if (session.code) {
 		txtCode.value = session.txtCode;
@@ -97,7 +85,8 @@
 		if (Array.isArray(tests)) {
 			uTests = tests;
 			mTests = uTests;
-			preview(mTests[0]);
+			currentTest = mTests[0];
+			preview(currentTest);
 		}
 	}, function (Error) {
 		console.log(Error);
