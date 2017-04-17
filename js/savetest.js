@@ -114,7 +114,8 @@
 		event.preventDefault();
 
 		if (!github) {
-
+			divModal.classList.remove('hidden');
+			return false;
 		}
 		repository.writeFile(
 			'master', // the name of the branch
