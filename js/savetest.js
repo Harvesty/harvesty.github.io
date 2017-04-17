@@ -8,16 +8,19 @@
 		session = view.sessionStorage,
 		github = null,
 		repository = null,
-		uTests = null, // Unmodified
-		mTests = null, // Modified
+		currentTest = null, // Modifying Test
+		uTests = null, // Unmodified Array
+		mTests = null, // Modified Array
+		blnEdit = true, // 编辑模式
 		txtUser = $("txtUser"),
 		txtPwd = $("txtPwd"),
 		btnGithub = $("btnGithub"),
 		txtCode = $("txtCode"),
 		txtTest = $("txtTest"),
-		btnAdd = $("btnAdd"),
 		pTest = $("pTest"),
 		cdCode = $("cdCode"),
+		btnMode = $("btnMode"),
+		btnAdd = $("btnAdd"),
 		btnUpload = $("btnUpload"),
 		secEdit = $("secEdit"),
 		secPreview = $("secPreview"),
@@ -53,21 +56,38 @@
 		pTest.textContent = test.Q.desc;
 		cdCode.textContent = test.Q.code;
 		Prism.highlightElement(cdCode);
+		btnMode.value = '编辑';
+		blnEdit = true;
+
 	}
 
 	// 初始化编辑器
 	function initEditor(test) {
 		txtTest.value = test.Q.desc;
 		txtCode.value = test.Q.code;
+		btnMode.value = '预览';
+		blnEdit = false;
 	}
 
+	currentTest = {
+		Q: {
+			desc: "",
+			code: ""
+		},
+		A: {
+			desc: "",
+			code: ""
+		}
+	};
+	initEditor(currentTest);
+	
 	// 恢复上次页面关闭前的状态
-	if (session.code) {
+	/*if (session.code) {
 		txtCode.value = session.txtCode;
 	}
 	if (session.txtFileName) {
 		txtFileName.value = session.txtFileName;
-	}
+	}*/
 
 	// 获取试题
 	getJSON("../data/base.json").then(function (tests) {
@@ -99,10 +119,19 @@
 
 	}, false);
 
+	// 模式切换
+	btnMode.addEventListener("click", function (event) {
+		if (blnEdit) {
+			initEditor(currentTest);
+		} else {
+			preview(currentTest);
+		}
+	}, false);
+
 	// 添加试题
 	btnAdd.addEventListener("click", function (event) {
 
-		let test = {
+		currentTest = {
 			Q: {
 				desc: txtTest.value,
 				code: txtCode.value
@@ -112,8 +141,8 @@
 				code: ""
 			}
 		};
-		mTests.push(test);
-		preview(test);
+		mTests.push(currentTest);
+		preview(currentTest);
 	}, false);
 
 	// 保存试题
@@ -144,9 +173,9 @@
 	}, false);
 
 	// 保存页面关闭前状态。
-	view.addEventListener("unload", function () {
+	/*view.addEventListener("unload", function () {
 		session.txtCode = txtCode.value;
 		session.txtFileName = txtFileName.value;
-	}, false);
+	}, false);*/
 
 }(self));
