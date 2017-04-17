@@ -110,11 +110,11 @@
 		event.preventDefault();
 
 		repository.writeFile(
-		   'master', // the name of the branch
-		   'data/base.json', // the path for the file
-		   JSON.stringify(mTests), // the contents of the file
-		   'save the tests', // the commit message
-		   function(err) {}
+			'master', // the name of the branch
+			'data/base.json', // the path for the file
+			JSON.stringify(mTests), // the contents of the file
+			'save the tests', // the commit message
+			function(err) {}
 		);
 
 	}, false);
