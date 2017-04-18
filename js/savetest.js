@@ -31,9 +31,12 @@
 		secEdit = $("secEdit"),
 		secPreview = $("secPreview"),
 		divModal = $("divModal"),
-		btnModalClose = $("btnModalClose")
-
-	;
+		btnModalClose = $("btnModalClose"),
+		evtClick = new MouseEvent('click', {
+			'view': window,
+			'bubbles': true,
+			'cancelable': true
+		});
 
 	// 函数：获取JSON数据
 	function getJSON(url) {
@@ -110,11 +113,6 @@
 		});
 		repository = github.getRepo(txtUser.value, 'harvesty.github.io');
 
-		let evtClick = new MouseEvent('click', {
-			'view': window,
-			'bubbles': true,
-			'cancelable': true
-		});
 		btnModalClose.dispatchEvent(evtClick);
 
 	}, false);
