@@ -8,7 +8,7 @@
 		session = view.sessionStorage,
 		github = null,
 		repository = null,
-		currentTest = null, // Modifying Test
+		// currentTest = null, // Modifying Test
 		uTests = null, // Unmodified Array
 		mTests = null, // Modified Array
 		blnEdit = true, // 编辑模式
@@ -77,9 +77,9 @@
 	// 初始化编辑器
 	function displayTest(test) {
 		if (blnEdit) {
-			initEditor(currentTest);
+			initEditor(test);
 		} else {
-			preview(currentTest);
+			preview(test);
 		}
 	}
 
@@ -96,9 +96,7 @@
 		if (Array.isArray(tests)) {
 			uTests = tests;
 			mTests = uTests;
-			currentTest = mTests[iCurrent];
-			btnMode.dispatchEvent(evtClick);
-			//preview(currentTest);
+			displayTest(mTests[iCurrent]);
 		}
 	}, function (Error) {
 		console.log(Error);
@@ -134,8 +132,8 @@
 	btnPre.addEventListener("click", function (event) {
 		if (iCurrent > 0) {
 			iCurrent = iCurrent - 1;
-			currentTest = mTests[iCurrent];
-			displayTest(currentTest);
+			// currentTest = mTests[iCurrent];
+			displayTest(mTests[iCurrent]);
 		}
 		if (iCurrent === 0) {
 			btnPre.disabled = true;
@@ -151,8 +149,8 @@
 	btnNext.addEventListener("click", function (event) {
 		if (iCurrent < mTests.length - 1) {
 			iCurrent = iCurrent + 1;
-			currentTest = mTests[iCurrent];
-			displayTest(currentTest);
+			// currentTest = mTests[iCurrent];
+			displayTest(mTests[iCurrent]);
 		}
 		if (iCurrent === mTests.length - 1) {
 			btnNext.disabled = true;
@@ -179,7 +177,11 @@
 	// 添加试题
 	btnAdd.addEventListener("click", function (event) {
 
-		currentTest = {
+		if (!blnEdit) {
+			blnEdit = true;
+			btnMode.dispatchEvent(evtClick);
+		}
+		let newTest = {
 			Q: {
 				desc: "",
 				code: ""
@@ -189,7 +191,7 @@
 				code: ""
 			}
 		};
-		initEditor(currentTest);
+		initEditor(newTest);
 
 	}, false);
 
@@ -201,13 +203,14 @@
 	// 模式切换
 	btnMode.addEventListener("click", function (event) {
 		blnEdit = !blnEdit;
+		displayTest(mTests[iCurrent]);
 		if (blnEdit) {
-			initEditor(currentTest);
+			// initEditor(currentTest);
 			secEdit.classList.remove('hidden');
 			secPreview.classList.add('hidden');
 			btnMode.value = '预览';
 		} else {
-			preview(currentTest);
+			// preview(currentTest);
 			secPreview.classList.remove('hidden');
 			secEdit.classList.add('hidden');
 			btnMode.value = '编辑';
@@ -217,7 +220,7 @@
 	// 保存试题
 	btnSave.addEventListener("click", function (event) {
 
-		currentTest = {
+		let newTest = {
 			Q: {
 				desc: txtTest.value,
 				code: txtCode.value
@@ -227,8 +230,8 @@
 				code: ""
 			}
 		};
-		mTests.push(currentTest);
-		preview(currentTest);
+		mTests.push(newTest);
+		preview(newTest);
 	}, false);
 
 	// 上传试题
