@@ -8,7 +8,6 @@
 		session = view.sessionStorage,
 		github = null,
 		repository = null,
-		// currentTest = null, // Modifying Test
 		uTests = null, // Unmodified Array
 		mTests = null, // Modified Array
 		blnEdit = true, // 编辑模式
@@ -83,6 +82,18 @@
 		}
 	}
 
+	// 初始化编辑器
+	function saveTest(event) {
+		switch (event) {
+			case 'test':
+				
+				break;
+		
+			default:
+				break;
+		}
+	}
+
 	// 恢复上次页面关闭前的状态
 	/*if (session.code) {
 		txtCode.value = session.txtCode;
@@ -132,7 +143,6 @@
 	btnPre.addEventListener("click", function (event) {
 		if (iCurrent > 0) {
 			iCurrent = iCurrent - 1;
-			// currentTest = mTests[iCurrent];
 			displayTest(mTests[iCurrent]);
 		}
 		if (iCurrent === 0) {
@@ -149,7 +159,6 @@
 	btnNext.addEventListener("click", function (event) {
 		if (iCurrent < mTests.length - 1) {
 			iCurrent = iCurrent + 1;
-			// currentTest = mTests[iCurrent];
 			displayTest(mTests[iCurrent]);
 		}
 		if (iCurrent === mTests.length - 1) {
@@ -200,17 +209,19 @@
 
 	}, false);
 
+	// 保存试题
+	txtCode.addEventListener("click", saveTest, false);
+	txtTest.addEventListener("click", saveTest, false);
+
 	// 模式切换
 	btnMode.addEventListener("click", function (event) {
 		blnEdit = !blnEdit;
 		displayTest(mTests[iCurrent]);
 		if (blnEdit) {
-			// initEditor(currentTest);
 			secEdit.classList.remove('hidden');
 			secPreview.classList.add('hidden');
 			btnMode.value = '预览';
 		} else {
-			// preview(currentTest);
 			secPreview.classList.remove('hidden');
 			secEdit.classList.add('hidden');
 			btnMode.value = '编辑';
