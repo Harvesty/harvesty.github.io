@@ -198,19 +198,26 @@
 		if (!blnEdit) {
 			btnMode.dispatchEvent(evtClick);
 		}
-		let newTest = {
-			Q: {
-				desc: "",
-				code: ""
-			},
-			A: {
-				desc: "",
-				code: ""
-			}
-		};
-		iCurrent = mTests.length;
-		mTests.push(newTest);
-		displayTest(newTest);
+
+		let last = mTests[mTests.length - 1];
+		if (last.Q.desc === "" && last.Q.code === "") {
+			iCurrent = mTests.length - 1;
+		} else {
+			let newTest = {
+				Q: {
+					desc: "",
+					code: ""
+				},
+				A: {
+					desc: "",
+					code: ""
+				}
+			};
+			iCurrent = mTests.length;
+			mTests.push(newTest);
+		}
+		
+		displayTest(mTests[iCurrent]);
 
 	}, false);
 
