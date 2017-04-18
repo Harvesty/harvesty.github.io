@@ -28,7 +28,6 @@
 		btnMode = $("btnMode"),
 		btnAdd = $("btnAdd"),
 		btnDel = $("btnDel"),
-		btnSave = $("btnSave"),
 		btnPre = $("btnPre"),
 		btnNext = $("btnNext"),
 		btnFirst = $("btnFirst"),
@@ -255,23 +254,6 @@
 			secEdit.classList.add('hidden');
 			btnMode.value = '编辑';
 		}
-	}, false);
-
-	// 保存试题
-	btnSave.addEventListener("click", function (event) {
-
-		let newTest = {
-			Q: {
-				desc: txtTest.value,
-				code: txtCode.value
-			},
-			A: {
-				desc: "",
-				code: ""
-			}
-		};
-		mTests.push(newTest);
-		preview(newTest);
 	}, false);
 
 	// 上传试题
