@@ -178,7 +178,6 @@
 	btnAdd.addEventListener("click", function (event) {
 
 		if (!blnEdit) {
-			blnEdit = true;
 			btnMode.dispatchEvent(evtClick);
 		}
 		let newTest = {
@@ -191,6 +190,7 @@
 				code: ""
 			}
 		};
+		iCurrent = mTests.length;
 		displayTest(newTest);
 
 	}, false);
