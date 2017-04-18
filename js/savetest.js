@@ -93,7 +93,8 @@
 			uTests = tests;
 			mTests = uTests;
 			currentTest = mTests[0];
-			preview(currentTest);
+			btnMode.dispatchEvent("click");
+			//preview(currentTest);
 		}
 	}, function (Error) {
 		console.log(Error);
