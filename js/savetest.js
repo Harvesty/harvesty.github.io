@@ -96,7 +96,7 @@
 			uTests = tests;
 			mTests = uTests;
 			currentTest = mTests[0];
-			btnMode.dispatchEvent("click");
+			btnMode.dispatchEvent(evtClick);
 			//preview(currentTest);
 		}
 	}, function (Error) {
