@@ -191,7 +191,7 @@
 				code: ""
 			}
 		};
-		initEditor(newTest);
+		displayTest(newTest);
 
 	}, false);
 
