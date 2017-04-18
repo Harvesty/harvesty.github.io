@@ -2,7 +2,6 @@ html,
 body {
 	background-color: #DDD;
 	min-height: 100%;
-	margin: 0;
 }
 
 body {
@@ -11,7 +10,7 @@ body {
 	margin: 0 auto;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 	box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
-	padding: 7px 25px 70px;
+	padding: 0 25px;
 	background-color: #FFF;
 }
 
