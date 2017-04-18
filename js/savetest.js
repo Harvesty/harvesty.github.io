@@ -84,11 +84,20 @@
 
 	// 初始化编辑器
 	function saveTest(event) {
-		switch (event) {
-			case 'test':
-				
+		let test = mTests[iCurrent];
+		switch (event.target.id) {
+			case 'txtTest':
+				test.Q.desc = txtTest.value;
 				break;
-		
+			case 'txtCode':
+				test.Q.code = txtCode.value;
+				break;
+			case 'txtAns':
+				test.A.desc = txtTest.value;
+				break;
+			case 'txtAnsCode':
+				test.A.code = txtTest.value;
+				break;
 			default:
 				break;
 		}
@@ -200,6 +209,7 @@
 			}
 		};
 		iCurrent = mTests.length;
+		mTests.push(newTest);
 		displayTest(newTest);
 
 	}, false);
