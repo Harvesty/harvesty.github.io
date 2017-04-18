@@ -1,12 +1,13 @@
-html {
+html,
+body {
 	background-color: #DDD;
 	min-height: 100%;
+	margin: 0;
 }
 
 body {
 	box-sizing: content-box;
 	width: 600px;
-	min-height: 100%;
 	margin: 0 auto;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
 	box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
