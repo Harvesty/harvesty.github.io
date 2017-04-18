@@ -210,8 +210,8 @@
 	}, false);
 
 	// 保存试题
-	txtCode.addEventListener("click", saveTest, false);
-	txtTest.addEventListener("click", saveTest, false);
+	txtCode.addEventListener("change", saveTest, false);
+	txtTest.addEventListener("change", saveTest, false);
 
 	// 模式切换
 	btnMode.addEventListener("click", function (event) {
