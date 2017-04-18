@@ -230,7 +230,12 @@
 
 	// 删除试题
 	btnDel.addEventListener("click", function (event) {
-
+		let msg = '确定删除此条 Q & A 吗？';
+		if (confirm(msg)) {
+			mTests.splice(iCurrent, 1);
+			iCurrent = iCurrent - 1;
+			displayTest(mTests[iCurrent]);
+		}
 	}, false);
 
 	// 保存试题
