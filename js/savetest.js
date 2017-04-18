@@ -12,6 +12,7 @@
 		uTests = null, // Unmodified Array
 		mTests = null, // Modified Array
 		blnEdit = true, // 编辑模式
+		iCurrent = 0, // QA 当前所在下标
 		txtUser = $("txtUser"),
 		txtPwd = $("txtPwd"),
 		btnGithub = $("btnGithub"),
@@ -95,7 +96,7 @@
 		if (Array.isArray(tests)) {
 			uTests = tests;
 			mTests = uTests;
-			currentTest = mTests[0];
+			currentTest = mTests[iCurrent];
 			btnMode.dispatchEvent(evtClick);
 			//preview(currentTest);
 		}
@@ -119,22 +120,60 @@
 
 	// 第一题
 	btnFirst.addEventListener("click", function (event) {
-		displayTest(mTests[0]);
+		iCurrent = 0;
+		displayTest(mTests[iCurrent]);
+		btnPre.disabled = true;
+		btnFirst.disabled = true;
+		if (btnNext.disabled && mTests.length > 1) {
+			btnNext.disabled = false;
+			btnLast.disabled = false;
+		}
 	}, false);
 
 	// 上一题
 	btnPre.addEventListener("click", function (event) {
-
+		if (iCurrent > 0) {
+			iCurrent = iCurrent - 1;
+			currentTest = mTests[iCurrent];
+			displayTest(currentTest);
+		}
+		if (iCurrent === 0) {
+			btnPre.disabled = true;
+			btnFirst.disabled = true;
+		}
+		if (btnNext.disabled && mTests.length > 1) {
+			btnNext.disabled = false;
+			btnLast.disabled = false;
+		}
 	}, false);
 
 	// 下一题
 	btnNext.addEventListener("click", function (event) {
-
+		if (iCurrent < mTests.length - 1) {
+			iCurrent = iCurrent + 1;
+			currentTest = mTests[iCurrent];
+			displayTest(currentTest);
+		}
+		if (iCurrent === mTests.length - 1) {
+			btnNext.disabled = true;
+			btnLast.disabled = true;
+		}
+		if (btnPre.disabled && mTests.length > 1) {
+			btnPre.disabled = false;
+			btnFirst.disabled = false;
+		}
 	}, false);
 
 	// 最后一题
 	btnLast.addEventListener("click", function (event) {
-		displayTest(mTests[mTests.length - 1]);
+		iCurrent = mTests.length - 1;
+		displayTest(mTests[iCurrent]);
+		btnNext.disabled = true;
+		btnLast.disabled = true;
+		if (btnPre.disabled && mTests.length > 1) {
+			btnPre.disabled = false;
+			btnFirst.disabled = false;
+		}
 	}, false);
 
 	// 添加试题
