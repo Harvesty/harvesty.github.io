@@ -200,18 +200,17 @@
 
 	// 模式切换
 	btnMode.addEventListener("click", function (event) {
+		blnEdit = !blnEdit;
 		if (blnEdit) {
 			initEditor(currentTest);
 			secEdit.classList.remove('hidden');
 			secPreview.classList.add('hidden');
 			btnMode.value = '预览';
-			blnEdit = false;
 		} else {
 			preview(currentTest);
 			secPreview.classList.remove('hidden');
 			secEdit.classList.add('hidden');
 			btnMode.value = '编辑';
-			blnEdit = true;
 		}
 	}, false);
 
