@@ -34,7 +34,7 @@
 		btnModalClose = $("btnModalClose"),
 		evtClick = new MouseEvent('click', {
 			'view': window,
-			'bubbles': true,
+			'bubbles': false,
 			'cancelable': true
 		});
 
