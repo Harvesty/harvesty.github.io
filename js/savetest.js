@@ -21,6 +21,7 @@
 		cdCode = $("cdCode"),
 		btnMode = $("btnMode"),
 		btnAdd = $("btnAdd"),
+		btnDel = $("btnDel"),
 		btnSave = $("btnSave"),
 		btnPre = $("btnPre"),
 		btnNext = $("btnNext"),
@@ -61,20 +62,21 @@
 		pTest.textContent = test.Q.desc;
 		cdCode.textContent = test.Q.code;
 		Prism.highlightElement(cdCode);
-		secPreview.classList.remove('hidden');
-		secEdit.classList.add('hidden');
-		btnMode.value = '编辑';
-		blnEdit = true;
 	}
 
 	// 初始化编辑器
 	function initEditor(test) {
 		txtTest.value = test.Q.desc;
 		txtCode.value = test.Q.code;
-		secEdit.classList.remove('hidden');
-		secPreview.classList.add('hidden');
-		btnMode.value = '预览';
-		blnEdit = false;
+	}
+
+	// 初始化编辑器
+	function displayTest(test) {
+		if (blnEdit) {
+			initEditor(currentTest);
+		} else {
+			preview(currentTest);
+		}
 	}
 
 	// 恢复上次页面关闭前的状态
@@ -116,13 +118,24 @@
 
 	}, false);
 
-	// 模式切换
-	btnMode.addEventListener("click", function (event) {
-		if (blnEdit) {
-			initEditor(currentTest);
-		} else {
-			preview(currentTest);
-		}
+	// 第一题
+	btnFirst.addEventListener("click", function (event) {
+		displayTest(mTests[0]);
+	}, false);
+
+	// 上一题
+	btnPre.addEventListener("click", function (event) {
+
+	}, false);
+
+	// 下一题
+	btnNext.addEventListener("click", function (event) {
+
+	}, false);
+
+	// 最后一题
+	btnLast.addEventListener("click", function (event) {
+		displayTest(mTests[mTests.length - 1]);
 	}, false);
 
 	// 添加试题
@@ -139,7 +152,29 @@
 			}
 		};
 		initEditor(currentTest);
-		
+
+	}, false);
+
+	// 删除试题
+	btnDel.addEventListener("click", function (event) {
+
+	}, false);
+
+	// 模式切换
+	btnMode.addEventListener("click", function (event) {
+		if (blnEdit) {
+			initEditor(currentTest);
+			secEdit.classList.remove('hidden');
+			secPreview.classList.add('hidden');
+			btnMode.value = '预览';
+			blnEdit = false;
+		} else {
+			preview(currentTest);
+			secPreview.classList.remove('hidden');
+			secEdit.classList.add('hidden');
+			btnMode.value = '编辑';
+			blnEdit = true;
+		}
 	}, false);
 
 	// 保存试题
@@ -159,7 +194,7 @@
 		preview(currentTest);
 	}, false);
 
-	// 保存试题
+	// 上传试题
 	btnUpload.addEventListener("click", function (event) {
 
 		if (!github) {
