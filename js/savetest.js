@@ -1,3 +1,9 @@
+/*  Todo List
+	1. 不同机器之间同步，现在的做法会最后提交会覆盖以前的数据，无法合并。
+	2. 利用本地存储保存数据。
+	3. 看看能否把Textarea更换为富文本编辑器。
+*/
+
 (function (view) {
 	"use strict";
 	var
@@ -71,6 +77,7 @@
 	function initEditor(test) {
 		txtTest.value = test.Q.desc;
 		txtCode.value = test.Q.code;
+		txtTest.focus();
 	}
 
 	// 初始化编辑器
@@ -216,7 +223,7 @@
 			iCurrent = mTests.length;
 			mTests.push(newTest);
 		}
-		
+
 		displayTest(mTests[iCurrent]);
 
 	}, false);
