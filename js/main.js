@@ -1,5 +1,5 @@
 //$("#app").in
-$.getJSON("data/base.json", function (data) {
+/*$.getJSON("data/base.json", function (data) {
     var items = [];
     $.each(data, function (key, val) {
         items.push("<li id='" + key + "'>" + val + "</li>");
@@ -10,4 +10,4 @@ $.getJSON("data/base.json", function (data) {
         "class": "my-new-list",
         html: items.join("")
     }).appendTo("body");
-});
+});*/
