@@ -1,0 +1,33 @@
+{
+  "name": "Web Digger",
+  "short_name": "Web Digger",
+  "icons": [{
+    "src": "images/icons/lfs-48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/lfs-72.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/lfs-96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/lfs-144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/lfs-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "images/icons/lfs-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "background_color": "#3E4EB8",
+  "theme_color": "#2F3BA2"
+}
