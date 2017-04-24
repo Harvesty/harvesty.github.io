@@ -12,14 +12,7 @@ body {
 
 header,
 footer {
-  flex: 1;
-}
-
-header {
-  background-color: #fff;
-  padding: 10px 60px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
-  transition: background-color 0.3s ease-in-out;
+  flex: none;
 }
 
 .page {
@@ -27,9 +20,28 @@ header {
   flex: 1;
 }
 
-.page-main{
+.page-main {
   flex: 1;
 }
-.page-nav{
+
+.page-nav {
   flex: 0 0 12em;
 }
+
+
+/* end 页面顶层布局 end */
+
+
+/* start header式样 start */
+
+header {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-in-out;
+}
+.entry{
+  flex: none;
+  
+}
+/* end header式样 end */
