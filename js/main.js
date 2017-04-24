@@ -11,7 +11,7 @@
         isLoading: true,
         visibleCards: {},
         selectedCities: [],
-        spinner: doc.first('.loader'),
+        //spinner: doc.first('.loader'),
         daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     };
 
@@ -22,10 +22,10 @@
      *
      ****************************************************************************/
 
-    doc.id('butAdd').addEventListener('click', function () {
+    /*doc.id('butAdd').addEventListener('click', function () {
         // Open/show the add new city dialog
         app.toggleAddDialog(true);
-    });
+    });*/
 
 
 
