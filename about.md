@@ -1,8 +1,5 @@
 # Markdown Test
 
-------
-
-
 Look, a list!
 
  * foo
