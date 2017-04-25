@@ -1,15 +1,12 @@
-# Markdown Test
+# Web Digger
 
-Look, a list!
+一个Web学习工具、资源的入口，新技术的试验场！
 
- * foo
- * bar
- * baz
+## 新功能计划
 
-And here's some code! :+1:
-
-```javascript
-$(function(){
-  $('div').html('I am a div.');
-});
-```
+ * 规划及改进模块（需要添加到特性及要改进的地方的列表），放进关于页面？
+ * 新模块：Flex布局编辑器。
+ * 功能改进：自动保存密码
+ * jsTest：不同机器之间同步，现在的做法会最后提交会覆盖以前的数据，无法合并。
+ * jsTest：利用本地存储保存数据。
+ * jsTest：把Textarea更换为富文本编辑器。
