@@ -5,6 +5,7 @@ var filesToCache = [
   '/',
   '/index.html',
   '/page/addtest.html',
+  '/js/db.js',
   '/js/main.js',
   '/js/prism.js',
   '/js/savetest.js',

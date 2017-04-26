@@ -1,5 +1,7 @@
 
-(function () {
+;
+
+(function (w, db) {
     'use strict';
 
     var doc = {
@@ -60,4 +62,4 @@
                 console.log('Service Worker Registered');
             });
     }
-})();
+}(window, window.IDB));
