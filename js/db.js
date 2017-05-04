@@ -1,20 +1,30 @@
 ;
-      
-window.indexedDB = window.indexedDB ||
-                   window.mozIndexedDB ||
-                   window.webkitIndexedDB ||
-                   window.msIndexedDB;
-      
-window.IDBTransaction = window.IDBTransaction ||
-                   window.webkitIDBTransaction ||
-                   window.msIDBTransaction;
-      
-window.IDBKeyRange = window.IDBKeyRange ||
-                   window.webkitIDBKeyRange ||
-                   window.msIDBKeyRange;
-      
+
+window.indexedDB =
+    window.indexedDB ||
+    window.mozIndexedDB ||
+    window.webkitIndexedDB ||
+    window.msIndexedDB;
+
+window.IDBTransaction =
+    window.IDBTransaction ||
+    window.webkitIDBTransaction ||
+    window.msIDBTransaction;
+
+window.IDBKeyRange =
+    window.IDBKeyRange ||
+    window.webkitIDBKeyRange ||
+    window.msIDBKeyRange;
+
 (function (w) {
     'use strict';
+
+    function DB(name, options) {
+        this.idb = null;
+        this.name = name;
+        this.version = options.version;
+        this.stores = options.stores || [];
+    }
     var db = {
         version: 1,
         objectStoreName: 'tasks',
