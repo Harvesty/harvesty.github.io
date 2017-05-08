@@ -12,6 +12,7 @@ var filesToCache = [
   '/css/page.css',
   '/css/prism.css',
   '/css/savetest.css',
+  '/css/normalize.css',
   '/images/icons/lfs-48.png',
   '/images/icons/lfs-72.png',
   '/images/icons/lfs-96.png',
