@@ -10,6 +10,7 @@ var filesToCache = [
   '/js/prism.js',
   '/js/savetest.js',
   '/css/page.css',
+  '/css/mpage.css',
   '/css/prism.css',
   '/css/savetest.css',
   '/css/normalize.css',
