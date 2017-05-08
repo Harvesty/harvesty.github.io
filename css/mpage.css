@@ -22,10 +22,12 @@ footer {
 
 .page-main {
   flex: 1;
+  background-color: beige;
 }
 
 .page-nav {
   flex: 0 0 12em;
+  background-color: bisque;
 }
 
 
