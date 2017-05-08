@@ -1,0 +1,88 @@
+html {
+  background-color: #DDD;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex: none;
+}
+
+.page {
+  display: flex;
+  flex: 1;
+}
+
+.page-main {
+  flex: 1;
+}
+
+.page-nav {
+  flex: 0 0 12em;
+}
+
+
+/* end 页面顶层布局 end */
+
+
+/* start header式样 start */
+
+header {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.entry {
+  flex: none;
+}
+
+.btn {
+  border: none;
+  display: inline-block;
+  outline: 0;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.btn:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.btn {
+  user-select: none
+}
+
+.disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.3
+}
+
+.disabled *,
+:disabled * {
+  pointer-events: none
+}
+
+.btn.disabled:hover,
+.btn:disabled:hover {
+  box-shadow: none
+}
+
+
+/* end header式样 end */
