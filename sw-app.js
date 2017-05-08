@@ -1,4 +1,4 @@
-var cacheName = 'Web-Digger-0-0-2';
+var cacheName = 'Web-Digger-0-0-3';
 var dataCacheName = 'Web-Digger-v1';
 
 var filesToCache = [
@@ -9,6 +9,8 @@ var filesToCache = [
   '/js/main.js',
   '/js/prism.js',
   '/js/savetest.js',
+  'unpkg.com/vue',
+  'unpkg.com/github-api/dist/GitHub.bundle.min.js',
   '/css/page.css',
   '/css/mpage.css',
   '/css/prism.css',
