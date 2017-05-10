@@ -1,5 +1,5 @@
-var cacheName = 'Web-Digger-0-0-3';
-var dataCacheName = 'Web-Digger-v1';
+var cacheName = 'Web-Digger-0-0-4';
+var dataCacheName = 'Web-Digger-v2';
 
 var filesToCache = [
   '/',
