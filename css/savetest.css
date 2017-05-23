@@ -5,12 +5,9 @@ html {
 
 body {
 	box-sizing: content-box;
-	width: 600px;
+	width: 100%;
 	min-height: 100%;
-	margin: 0 auto;
 	font-family: Verdana, Helvetica, Arial, sans-serif;
-	box-shadow: 0 0 10px 2px rgba(0, 0, 0, .5);
-	padding: 0 25px;
 	background-color: #FFF;
 }
 
@@ -18,8 +15,6 @@ body>header {
 	width: 90%;
 	top: 0;
 	background-color: #fff;
-	height: 40px;
-	padding: 10px 5%;
 	position: relative;
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
 	transition: background-color 0.3s ease-in-out;
@@ -39,16 +34,9 @@ form {
 	text-align: center;
 }
 
-form {
-	margin-top: 5px;
-}
-
-body>section {
-	margin-top: 40px;
-}
 
 .input {
-	width: 594px;
+	width: 90%;
 	margin: 0 auto;
 	display: block;
 }
